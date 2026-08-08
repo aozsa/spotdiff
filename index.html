@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ショッピングモール | 出口08</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 固定ヘッダー（現在のループ・エリア数表示） -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-area">
+          <span class="logo-icon">🛒</span>
+          <span class="logo-text">SHOPPING MART</span>
+        </div>
+        <div class="stage-counter">
+          <span>エリア: </span>
+          <strong id="stage-number">0</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ（観察・異変対象） -->
+    <main class="main-content" id="web-page-content">
+      <section class="hero-banner">
+        <h1 class="hero-title" id="target-hero-title">夏のビッグセール開催中！</h1>
+        <p class="hero-sub" id="target-hero-sub">全品 最大50%OFF！今すぐチェック</p>
+      </section>
+
+      <section class="products-section">
+        <h2 class="section-title">本日のおすすめ商品</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image" id="target-img-1">☕</div>
+            <div class="product-info">
+              <h3 class="product-name">オーガニックブレンドコーヒー</h3>
+              <p class="product-price" id="target-price-1">¥450</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image" id="target-img-2">👟</div>
+            <div class="product-info">
+              <h3 class="product-name" id="target-name-2">軽量ランニングシューズ</h3>
+              <p class="product-price">¥8,900</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image" id="target-img-3">🎧</div>
+            <div class="product-info">
+              <h3 class="product-name">ワイヤレスヘッドホン</h3>
+              <p class="product-price">¥12,800</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="notice-section">
+        <h3>お知らせ</h3>
+        <p id="target-notice-text">
+          当店をご利用いただき誠にありがとうございます。安心・安全なショッピングをお楽しみいただけます。
+        </p>
+      </section>
+    </main>
+
+    <!-- 固定ボトムバー（プレイヤーの判定操作UI） -->
+    <nav class="action-bar">
+      <div class="action-inner">
+        <p class="action-instruction">画面内に「異変」はありましたか？</p>
+        <div class="action-buttons">
+          <button id="btn-normal" class="btn btn-normal"><span class="btn-icon">⬅️</span> 異変なし (進む)</button>
+          <button id="btn-anomaly" class="btn btn-anomaly"><span class="btn-icon">⚠️</span> 異変あり (引き返す)</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- クリア時モーダル -->
+    <div id="clear-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>🎉 脱出成功！</h2>
+        <p>無事に「出口08」に到達しました！</p>
+        <button id="btn-restart" class="btn btn-primary">最初から遊ぶ</button>
+      </div>
+    </div>
+
+    <script type="module" src="script/main.js"></script>
+  </body>
+</html>
