@@ -32,11 +32,12 @@ function updateUI() {
 }
 
 function nextTurn() {
+  // 初回は異変を発生させない
   // 50%の確率で異変発生
   const hasAnomaly = Math.random() < 0.5
-  if (hasAnomaly) {
-    const randomIndex = Math.floor(Math.random() * ANOMALIES.length)
-    gameState.currentAnomaly = ANOMALIES[randomIndex]
+  if (gameState.currentStage > 0 && hasAnomaly) {
+    const i = Math.floor(Math.random() * ANOMALIES.length)
+    gameState.currentAnomaly = ANOMALIES[i]
   } else {
     gameState.currentAnomaly = null
   }
@@ -53,7 +54,7 @@ function handleChoice(playerThinksHasAnomaly) {
   }
 
   if (gameState.currentStage >= CONFIG.MAX_STAGE) {
-    document.getElementById("clear-modal").classList.remove("hidden")
+    document.getElementById("clear-modal").showModal()
     return
   }
 
@@ -63,5 +64,13 @@ function handleChoice(playerThinksHasAnomaly) {
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-normal").addEventListener("click", () => handleChoice(false))
   document.getElementById("btn-anomaly").addEventListener("click", () => handleChoice(true))
+
+  document.getElementById("btn-restart").addEventListener("click", () => {
+    gameState.currentStage = 0
+    gameState.currentAnomaly = null
+    document.getElementById("clear-modal").close()
+    nextTurn()
+  })
+
   nextTurn()
 })
