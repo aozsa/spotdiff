@@ -1,31 +1,17 @@
 import { ANOMALIES } from "./anomalies.js"
 
 const CONFIG = { MAX_STAGE: 8 }
+let initHTML = ""
 const gameState = { currentStage: 0, currentAnomaly: null }
 
 function resetDOM() {
   // 変更されたDOM要素を正常状態にリセットする処理
-  const heroTitle = document.getElementById("target-hero-title")
-  if (heroTitle) heroTitle.textContent = "夏のビッグセール開催中！"
-
-  const img1 = document.getElementById("target-img-1")
-  if (img1) img1.classList.remove("anomaly-upside-down")
-
-  const price1 = document.getElementById("target-price-1")
-  if (price1) {
-    price1.textContent = "¥450"
-    price1.classList.remove("anomaly-red-text")
-  }
-
-  const noticeText = document.getElementById("target-notice-text")
-  if (noticeText)
-    noticeText.textContent =
-      "当店をご利用いただき誠にありがとうございます。安心・安全なショッピングをお楽しみいただけます。"
+  document.getElementById("game-root").innerHTML = initHTML
 }
 
 function updateUI() {
   resetDOM()
-  document.getElementById("stage-number").textContent = gameState.currentStage
+  document.getElementById("stage-number").textContent = gameState.currentStage + 1
   if (gameState.currentAnomaly) {
     gameState.currentAnomaly.apply(document)
   }
@@ -62,6 +48,16 @@ function handleChoice(playerThinksHasAnomaly) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("%cダメ～～～!", "font-size: 64px; color: red;")
+  console.log("%cなんでココにいるの! エッチ! 変態!", "font-size: 24px")
+  console.log("%cえ? すごかったから仕組みが知りたくて…?", "font-size: 20px")
+  console.log("%cふ、ふ～ん… それなら… しょうがないから…", "font-size: 20px")
+  console.log("%cみ、みてもいいよ…", "font-size: 14px")
+  console.log("%c…", "font-size: 14px")
+  console.log("%cあ! でも変なことしたら許さないからね!", "font-size: 24px")
+
+  initHTML = document.getElementById("game-root").innerHTML
+
   document.getElementById("btn-normal").addEventListener("click", () => handleChoice(false))
   document.getElementById("btn-anomaly").addEventListener("click", () => handleChoice(true))
 

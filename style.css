@@ -8,20 +8,38 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: #f4f6f8;
   color: #333;
-  padding-top: 60px; /* 固定ヘッダー分の余白 */
-  padding-bottom: 120px; /* 固定アクションバー分の余白 */
+  padding-bottom: 200px; /* 固定アクションバー分の余白 */
+  overflow: hidden;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-root {
+  max-width: 1000px;
+  width: 100%;
+  border: 10px solid indigo;
+  overflow: scroll;
+  margin-bottom: 10em;
+}
+
+@media (width >= 1000px) {
+  .game-root {
+    margin: 1em;
+  }
 }
 
 /* ヘッダー */
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 60px;
   background-color: #2c3e50;
   color: #fff;
-  z-index: 100;
 }
 
 .header-inner {
@@ -33,14 +51,9 @@ body {
   padding: 0 20px;
 }
 
-.logo-area,
-.stage-counter {
+.logo-area {
   display: table-cell;
   vertical-align: middle;
-}
-
-.stage-counter {
-  text-align: right;
 }
 
 .stage-counter strong {
@@ -50,11 +63,7 @@ body {
 
 /* メインコンテンツ（Webサイト本体） */
 .main-content {
-  max-width: 900px;
-  margin: 20px auto;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding-bottom: 30px;
 }
 
@@ -70,11 +79,24 @@ body {
   margin: 20px;
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: space-around;
+  row-gap: 1em;
+}
+
+.product-image {
+  font-size: 64px;
+  display: inline-block;
+}
+
+.footer-text {
+  text-align: center;
+}
+
 /* 下部アクションバー */
 .action-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background: #1e272e;
   color: white;
@@ -88,19 +110,26 @@ body {
   text-align: center;
 }
 
+.action-buttons {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
 .modal {
   margin: auto;
   padding: 1em;
 }
 
 .btn {
+  min-width: 100px;
   font-size: 1rem;
   padding: 0.5em 1em;
   font-weight: bold;
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
-  margin: 1em;
 }
 
 .btn-normal {
@@ -110,13 +139,4 @@ body {
 .btn-anomaly {
   background-color: darkred;
   color: white;
-}
-
-/* 異変演出用のクラス例 */
-.anomaly-upside-down {
-  transform: rotate(180deg);
-}
-
-.anomaly-red-text {
-  color: #ff0000 !important;
 }
