@@ -15,80 +15,120 @@
         <header class="site-header">
           <div class="header-inner">
             <div class="logo-area">
-              <span class="logo-icon">🛒</span>
-              <span class="logo-text">SHOPPING MART</span>
+              <span class="logo-icon" id="target-logo-icon">🛒</span>
+              <span class="logo-text" id="target-logo-text">SHOPPING MART</span>
             </div>
           </div>
         </header>
 
         <main id="main-content" class="main-content">
-          <section class="hero-banner">
+          <section class="hero-banner" id="target-hero-banner">
             <h1 class="hero-title" id="target-hero-title">夏のビッグセール開催中！</h1>
             <p class="hero-sub" id="target-hero-sub">全品 最大50%OFF！今すぐチェック</p>
           </section>
 
           <section class="notice-section">
-            <h3>お知らせ</h3>
+            <h3 class="notice-title" id="target-notice-title">お知らせ</h3>
             <p id="target-notice-text">
               当店をご利用いただき誠にありがとうございます。安心・安全なショッピングをお楽しみいただけます。
             </p>
           </section>
 
           <section class="products-section">
-            <h2 class="section-title">本日のおすすめ商品</h2>
-            <div class="product-grid">
-              <article class="product-card">
+            <h2 class="section-title" id="target-section-title">本日のおすすめ商品</h2>
+            <div class="product-grid" id="target-product-grid">
+              <!-- 商品1 -->
+              <article class="product-card" id="card-prod-1">
                 <div class="product-image" id="target-img-1">☕</div>
                 <div class="product-info">
-                  <h3 class="product-name">オーガニックブレンドコーヒー</h3>
+                  <span class="product-category">食品・飲料</span>
+                  <h3 class="product-name" id="target-name-1">オーガニックブレンドコーヒー</h3>
+                  <p class="product-rating">★★★★☆ <span class="review-count">(128)</span></p>
                   <p class="product-price" id="target-price-1">¥450</p>
                 </div>
               </article>
 
-              <article class="product-card">
+              <!-- 商品2 -->
+              <article class="product-card" id="card-prod-2">
                 <div class="product-image" id="target-img-2">👟</div>
                 <div class="product-info">
+                  <span class="product-category">ファッション</span>
                   <h3 class="product-name" id="target-name-2">軽量ランニングシューズ</h3>
-                  <p class="product-price">¥8,900</p>
+                  <p class="product-rating">★★★★★ <span class="review-count">(340)</span></p>
+                  <p class="product-price" id="target-price-2">¥8,900</p>
                 </div>
               </article>
 
-              <article class="product-card">
+              <!-- 商品3 -->
+              <article class="product-card" id="card-prod-3">
                 <div class="product-image" id="target-img-3">🎧</div>
                 <div class="product-info">
-                  <h3 class="product-name">ワイヤレスヘッドホン</h3>
-                  <p class="product-price">¥12,800</p>
+                  <span class="product-category">家電・AV</span>
+                  <h3 class="product-name" id="target-name-3">ワイヤレスヘッドホン</h3>
+                  <p class="product-rating">★★★★☆ <span class="review-count">(95)</span></p>
+                  <p class="product-price" id="target-price-3">¥12,800</p>
                 </div>
               </article>
 
-              <article class="product-card">
-                <div class="product-image">🥤</div>
+              <!-- 商品4 -->
+              <article class="product-card" id="card-prod-4">
+                <div class="product-image" id="target-img-4">🥤</div>
                 <div class="product-info">
-                  <h3 class="product-name">ワイヤレスヘッドホン</h3>
-                  <p class="product-price">¥12,800</p>
+                  <span class="product-category">食品・飲料</span>
+                  <h3 class="product-name" id="target-name-4">特製クラフトコーラ 3本セット</h3>
+                  <p class="product-rating">★★★★★ <span class="review-count">(54)</span></p>
+                  <p class="product-price" id="target-price-4">¥1,200</p>
                 </div>
               </article>
 
-              <article class="product-card">
-                <div class="product-image">🎧</div>
+              <!-- 商品5 -->
+              <article class="product-card" id="card-prod-5">
+                <div class="product-image" id="target-img-5">🎒</div>
                 <div class="product-info">
-                  <h3 class="product-name">ワイヤレスヘッドホン</h3>
-                  <p class="product-price">¥12,800</p>
+                  <span class="product-category">バッグ</span>
+                  <h3 class="product-name" id="target-name-5">多機能デイパック 25L</h3>
+                  <p class="product-rating">★★★★☆ <span class="review-count">(210)</span></p>
+                  <p class="product-price" id="target-price-5">¥6,400</p>
                 </div>
               </article>
 
-              <article class="product-card">
-                <div class="product-image">🎧</div>
+              <!-- 商品6 -->
+              <article class="product-card" id="card-prod-6">
+                <div class="product-image" id="target-img-6">⌚</div>
                 <div class="product-info">
-                  <h3 class="product-name">ワイヤレスヘッドホン</h3>
-                  <p class="product-price">¥12,800</p>
+                  <span class="product-category">スマートデバイス</span>
+                  <h3 class="product-name" id="target-name-6">スマートウォッチ Series 5</h3>
+                  <p class="product-rating">★★★★★ <span class="review-count">(432)</span></p>
+                  <p class="product-price" id="target-price-6">¥19,800</p>
+                </div>
+              </article>
+
+              <!-- 商品7 -->
+              <article class="product-card" id="card-prod-7">
+                <div class="product-image" id="target-img-7">⌨️</div>
+                <div class="product-info">
+                  <span class="product-category">PC周辺機器</span>
+                  <h3 class="product-name" id="target-name-7">静音メカニカルキーボード</h3>
+                  <p class="product-rating">★★★★☆ <span class="review-count">(88)</span></p>
+                  <p class="product-price" id="target-price-7">¥14,500</p>
+                </div>
+              </article>
+
+              <!-- 商品8 -->
+              <article class="product-card" id="card-prod-8">
+                <div class="product-image" id="target-img-8">🪴</div>
+                <div class="product-info">
+                  <span class="product-category">インテリア・観葉植物</span>
+                  <h3 class="product-name" id="target-name-8">テーブル観葉植物 パキラ</h3>
+                  <p class="product-rating">★★★★★ <span class="review-count">(167)</span></p>
+                  <p class="product-price" id="target-price-8">¥2,300</p>
                 </div>
               </article>
             </div>
           </section>
 
           <footer class="footer-text">
-            <p>(o) 20** Shopping Mart. All rights reserved.</p>
+            <p id="target-footer-text">(o) 20** Shopping Mart. All rights reserved.</p>
           </footer>
         </main>
       </div>

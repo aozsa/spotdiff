@@ -46,14 +46,26 @@ body {
   max-width: 900px;
   margin: 0 auto;
   height: 100%;
-  display: table;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
 }
 
 .logo-area {
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 
 .stage-counter strong {
@@ -65,6 +77,7 @@ body {
 .main-content {
   background: #fff;
   padding-bottom: 30px;
+  transition: background-color 0.3s ease;
 }
 
 .hero-banner {
@@ -74,25 +87,117 @@ body {
   padding: 40px 20px;
 }
 
+.hero-title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
 .products-section,
 .notice-section {
-  margin: 20px;
+  margin: 24px 20px;
+}
+
+.notice-section {
+  background: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+}
+
+.notice-title {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #2c3e50;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: #2c3e50;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  justify-content: space-around;
-  row-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .product-image {
-  font-size: 64px;
-  display: inline-block;
+  font-size: 56px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.product-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-category {
+  font-size: 0.75rem;
+  color: #718096;
+  background: #edf2f7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  align-self: center;
+}
+
+.product-name {
+  font-size: 0.95rem;
+  color: #2d3748;
+  margin: 4px 0;
+}
+
+.product-rating {
+  font-size: 0.8rem;
+  color: #f39c12;
+}
+
+.review-count {
+  color: #a0aec0;
+  font-size: 0.75rem;
+}
+
+.product-price {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #e53e3e;
+  margin-top: 4px;
 }
 
 .footer-text {
   text-align: center;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  padding-top: 20px;
+  border-top: 1px solid #edf2f7;
 }
 
 /* 下部アクションバー */
