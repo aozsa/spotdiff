@@ -18,6 +18,9 @@
               <span class="logo-icon" id="target-logo-icon">🛒</span>
               <span class="logo-text" id="target-logo-text">SHOPPING MART</span>
             </div>
+            <div class="header-nav">
+              <button id="btn-show-rule" class="btn-text-link" title="ルールを確認">？ 遊び方</button>
+            </div>
           </div>
         </header>
 
@@ -147,11 +150,31 @@
         </div>
       </nav>
 
+      <!-- スタート・ルール説明モーダル -->
+      <dialog id="start-modal" class="modal">
+        <div class="modal-content start-modal-content">
+          <div class="modal-badge">8番出口ライク・ブラウザ異変脱出ゲーム</div>
+          <h2 class="modal-title">🚪 8枚ページ</h2>
+          <p class="modal-lead">オンラインショッピングサイトを模した迷宮から脱出せよ。</p>
+          <div class="rule-box">
+            <h3>【探索の掟】</h3>
+            <ul>
+              <li><strong>ページ1は正常な状態</strong>です。まずはページ全体をよく観察してください。</li>
+              <li>次以降のページで<strong>異変を見つけたら</strong>、ただちに<strong>「引き返す」</strong>を押してください。</li>
+              <li><strong>異変がなければ</strong>、迷わず<strong>「進む」</strong>を押してください。</li>
+              <li>異変を見落としたり、誤って引き返すと、<strong>ページ1に逆戻り</strong>します。</li>
+              <li>連続で正解し、<strong>ページ8（出口08）</strong>へ到達できれば脱出成功です。</li>
+            </ul>
+          </div>
+          <button id="btn-start" class="btn btn-primary btn-start-game">探索を開始する</button>
+        </div>
+      </dialog>
+
       <!-- クリア時モーダル -->
-      <dialog id="clear-modal" class="modal" popover>
+      <dialog id="clear-modal" class="modal">
         <div class="modal-content">
           <h2>🎉 脱出成功！</h2>
-          <p>無事に「出口08」に到達しました！</p>
+          <p>無事に「出口08」に到達し、無限ループのショッピングモールから脱出しました！</p>
           <button id="btn-restart" class="btn btn-primary">もう一度遊ぶ</button>
         </div>
       </dialog>

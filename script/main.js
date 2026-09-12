@@ -97,6 +97,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initHTML = document.getElementById("game-root").innerHTML
 
+  const startModal = document.getElementById("start-modal")
+  const btnStart = document.getElementById("btn-start")
+  const btnShowRule = document.getElementById("btn-show-rule")
+
+  // スタートモーダル・ルール確認の制御
+  if (startModal) {
+    startModal.showModal()
+  }
+
+  if (btnStart) {
+    btnStart.addEventListener("click", () => {
+      startModal.close()
+    })
+  }
+
+  if (btnShowRule) {
+    btnShowRule.addEventListener("click", () => {
+      startModal.showModal()
+    })
+  }
+
   document.getElementById("btn-normal").addEventListener("click", () => handleChoice(false))
   document.getElementById("btn-anomaly").addEventListener("click", () => handleChoice(true))
 
