@@ -1,15 +1,13 @@
+:root {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
-  padding-bottom: 200px; /* 固定アクションバー分の余白 */
-  overflow: hidden;
 }
 
 .root {
@@ -142,27 +140,16 @@ body {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
 }
 
 .product-card {
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 16px;
+  padding: 1em;
   background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .product-image {
@@ -383,7 +370,7 @@ body {
 /* 画面遷移・暗転フェード演出 */
 .transition-overlay {
   position: fixed;
-  inset: 0;
+  inset: -60px;
   background-color: #000;
   opacity: 0;
   pointer-events: none;
@@ -412,6 +399,9 @@ body {
 .transition-overlay.incorrect {
   background: radial-gradient(circle, #2a0505 0%, #080000 100%);
   animation: shake 0.4s ease-in-out;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .transition-message {
