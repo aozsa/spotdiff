@@ -170,8 +170,19 @@
       <dialog id="clear-modal" class="modal">
         <div class="modal-content">
           <h2>脱出に成功した</h2>
-          <p>8枚ページに隠された異変を見つけた君は、このショッピングモールから脱出に成功した</p>
-          <button id="btn-restart" class="btn btn-primary">スタートにもどる</button>
+          <p>8枚ページを確実に進み、このショッピングサイトからの脱出に成功した</p>
+          <div class="clear-stats">
+            <p>
+              遭遇した異変の種類:
+              <span class="highlight-count"
+                ><strong id="clear-anomaly-count">0</strong> / <span id="clear-anomaly-total">25</span> 種類</span
+              >
+            </p>
+            <p id="clear-anomaly-detail" class="clear-anomaly-detail"></p>
+          </div>
+          <div>
+            <button id="btn-restart" class="btn btn-primary">スタートにもどる</button>
+          </div>
         </div>
       </dialog>
       <!-- 画面遷移・判定演出オーバーレイ -->

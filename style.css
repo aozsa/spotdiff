@@ -450,3 +450,31 @@
     transform: translateX(4px);
   }
 }
+
+/* クリア画面の異変統計表示 */
+.clear-stats {
+  margin: 1.25rem auto;
+  padding: 0.85rem 1.2rem;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  display: inline-block;
+  min-width: 220px;
+}
+
+.clear-stats p {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.clear-stats .highlight-count {
+  font-size: 1.35rem;
+  color: #3182ce;
+  font-weight: bold;
+}
+
+.clear-anomaly-detail {
+  font-size: 0.85rem !important;
+  color: #718096 !important;
+}

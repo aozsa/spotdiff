@@ -2,7 +2,12 @@ import { ANOMALIES } from "./anomalies.js"
 
 const CONFIG = { MAX_STAGE: 8 }
 let initHTML = ""
-const gameState = { currentStage: 0, currentAnomaly: null }
+const gameState = {
+  currentStage: 0,
+  currentAnomaly: null,
+  totalAnomalies: [],
+  currentRunAnomalies: [],
+}
 
 let isTransitioning = false
 
@@ -33,6 +38,19 @@ function nextTurn() {
   } else {
     gameState.currentAnomaly = null
   }
+
+  const alwaysAnom = false
+  if (alwaysAnom) {
+    const i = Math.floor(Math.random() * ANOMALIES.length)
+    gameState.currentAnomaly = ANOMALIES[i]
+    console.log(gameState.currentAnomaly)
+  }
+
+  if (gameState.currentAnomaly) {
+    gameState.totalAnomalies.push(gameState.currentAnomaly)
+    gameState.currentRunAnomalies.push(gameState.currentAnomaly)
+  }
+
   updateUI()
 }
 
@@ -53,6 +71,7 @@ async function handleChoice(playerThinksHasAnomaly) {
   } else {
     message = playerThinksHasAnomaly ? "異変は無かった… ページ1に戻されます" : "異変を見落とした… ページ1に戻されます"
     gameState.currentStage = 0 // 失敗で最初に戻る
+    gameState.currentRunAnomalies = []
   }
 
   // 暗転演出の実行
@@ -69,6 +88,27 @@ async function handleChoice(playerThinksHasAnomaly) {
   // 2. 完全に暗転した状態で画面を更新
   if (gameState.currentStage >= CONFIG.MAX_STAGE) {
     overlay.className = "transition-overlay"
+    const countEl = document.getElementById("clear-anomaly-count")
+    const totalEl = document.getElementById("clear-anomaly-total")
+    const detailEl = document.getElementById("clear-anomaly-detail")
+
+    // 重複を除外した遭遇異変の種類数（ユニーク数）を算出
+    const uniqueTotal = new Set(gameState.totalAnomalies.map((a) => a.id)).size
+    const uniqueRun = new Set(gameState.currentRunAnomalies.map((a) => a.id)).size
+
+    if (countEl) {
+      countEl.textContent = uniqueTotal
+    }
+    if (totalEl) {
+      totalEl.textContent = ANOMALIES.length
+    }
+    if (detailEl) {
+      if (uniqueTotal !== uniqueRun) {
+        detailEl.textContent = `（今回: ${uniqueRun}種類 / 累計: ${uniqueTotal}種類）`
+      } else {
+        detailEl.textContent = `（全${ANOMALIES.length}種類中）`
+      }
+    }
     document.getElementById("clear-modal").showModal()
     isTransitioning = false
     return
@@ -108,6 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btnStart) {
     btnStart.addEventListener("click", () => {
+      gameState.totalAnomalies = []
+      gameState.currentRunAnomalies = []
       startModal.close()
     })
   }
@@ -124,6 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-restart").addEventListener("click", () => {
     gameState.currentStage = 0
     gameState.currentAnomaly = null
+    gameState.totalAnomalies = []
+    gameState.currentRunAnomalies = []
     document.getElementById("clear-modal").close()
     nextTurn()
   })
