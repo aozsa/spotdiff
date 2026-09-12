@@ -154,13 +154,15 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .product-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .product-image {
@@ -244,9 +246,11 @@ body {
   padding: 0;
   border: none;
   border-radius: 12px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.4),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
   background: #ffffff;
-  max-width: 540px;
+  max-width: 800px;
   width: 90%;
 }
 
@@ -256,67 +260,14 @@ body {
 }
 
 .modal-content {
-  padding: 28px 24px;
+  padding: 1rem;
   text-align: center;
 }
 
-.modal-badge {
-  display: inline-block;
-  background: #ebf8ff;
-  color: #2b6cb0;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 4px 10px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-.modal-title {
-  font-size: 1.6rem;
-  color: #1a202c;
-  margin-bottom: 8px;
-}
-
-.modal-lead {
-  font-size: 0.95rem;
-  color: #4a5568;
-  margin-bottom: 20px;
-}
-
 .rule-box {
-  background: #f7fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: left;
-  margin-bottom: 24px;
-}
-
-.rule-box h3 {
-  font-size: 0.95rem;
-  color: #2d3748;
-  margin-bottom: 10px;
-}
-
-.rule-box ul {
-  list-style: none;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: #4a5568;
-}
-
-.rule-box li {
-  margin-bottom: 8px;
-  position: relative;
-  padding-left: 18px;
-}
-
-.rule-box li::before {
-  content: "•";
-  color: #3182ce;
-  font-weight: bold;
-  position: absolute;
-  left: 4px;
+  margin: 1em 0;
+  text-align: start;
+  padding-left: 2em;
 }
 
 .btn {
@@ -327,11 +278,13 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.1s ease, filter 0.2s ease;
+  transition:
+    transform 0.1s ease,
+    filter 0.2s ease;
 }
 
 .btn:active {
-  transform: scale(0.96);
+  opacity: 0.8;
 }
 
 .btn-primary {
@@ -345,7 +298,6 @@ body {
 
 .btn-start-game {
   width: 100%;
-  font-size: 1.1rem;
   padding: 0.8em;
 }
 
@@ -369,10 +321,19 @@ body {
 
 /* 異変用スタイル・キーフレームアニメーション */
 @keyframes anomaly-shake {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(-2px, 2px) rotate(-3deg); }
-  50% { transform: translate(2px, -2px) rotate(3deg); }
-  75% { transform: translate(-2px, -2px) rotate(-1deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-2px, 2px) rotate(-3deg);
+  }
+  50% {
+    transform: translate(2px, -2px) rotate(3deg);
+  }
+  75% {
+    transform: translate(-2px, -2px) rotate(-1deg);
+  }
 }
 
 .anomaly-shaking {
@@ -381,8 +342,13 @@ body {
 }
 
 @keyframes anomaly-pulse-grow {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.3); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
 }
 
 .anomaly-pulsing {
@@ -390,11 +356,24 @@ body {
 }
 
 @keyframes glitch-skew {
-  0%, 100% { transform: skew(0deg); }
-  20% { transform: skew(10deg); filter: hue-rotate(90deg); }
-  40% { transform: skew(-10deg); filter: hue-rotate(180deg); }
-  60% { transform: skew(5deg); }
-  80% { transform: skew(-5deg); }
+  0%,
+  100% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(10deg);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: skew(-10deg);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: skew(5deg);
+  }
+  80% {
+    transform: skew(-5deg);
+  }
 }
 
 .anomaly-glitch {
@@ -413,7 +392,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease;
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.35s ease;
   user-select: none;
 }
 
@@ -441,7 +422,9 @@ body {
   text-align: center;
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+  transition:
+    opacity 0.3s ease 0.1s,
+    transform 0.3s ease 0.1s;
   padding: 0 20px;
 }
 
@@ -460,9 +443,20 @@ body {
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-8px); }
-  40% { transform: translateX(8px); }
-  60% { transform: translateX(-4px); }
-  80% { transform: translateX(4px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-8px);
+  }
+  40% {
+    transform: translateX(8px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
 }

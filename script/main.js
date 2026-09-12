@@ -48,7 +48,7 @@ async function handleChoice(playerThinksHasAnomaly) {
   // メッセージの決定
   let message = ""
   if (isCorrect) {
-    message = playerThinksHasAnomaly ? "異変に気づいた。戻る" : "異変は無かった。次のページへ"
+    message = playerThinksHasAnomaly ? "異変に気づいた。引き返す" : "異変は無かった。次のページへ"
     gameState.currentStage += 1
   } else {
     message = playerThinksHasAnomaly ? "異変は無かった… ページ1に戻されます" : "異変を見落とした… ページ1に戻されます"
