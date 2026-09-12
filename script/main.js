@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const startModal = document.getElementById("start-modal")
   const btnStart = document.getElementById("btn-start")
-  const btnShowRule = document.getElementById("btn-show-rule")
+  let isGameStarted = false
 
   // スタートモーダル・ルール確認の制御
   if (startModal) {
@@ -148,17 +148,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (btnStart) {
     btnStart.addEventListener("click", () => {
-      gameState.totalAnomalies = []
-      gameState.currentRunAnomalies = []
+      if (!isGameStarted) {
+        isGameStarted = true
+        gameState.totalAnomalies = []
+        gameState.currentRunAnomalies = []
+      }
       startModal.close()
     })
   }
 
-  if (btnShowRule) {
-    btnShowRule.addEventListener("click", () => {
-      startModal.showModal()
-    })
-  }
+  // 遊び方ボタンはDOMリセットで再生成されるためイベント委譲で捕捉
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("#btn-show-rule")) {
+      if (btnStart) {
+        btnStart.textContent = "ゲームに戻る"
+      }
+      if (startModal) {
+        startModal.showModal()
+      }
+    }
+  })
 
   document.getElementById("btn-normal").addEventListener("click", () => handleChoice(false))
   document.getElementById("btn-anomaly").addEventListener("click", () => handleChoice(true))
